@@ -13,16 +13,16 @@ X = p3.readData("toy_data.txt")
 # several different random initializations. Provide plots of the solution
 # for each K that minimizes the total distortion cost.
 
-# print "----------------------SECTION 1.A----------------------"
-# K_arr = [1, 2, 3, 4]
-# tries = 4
-# print X
-# for K in K_arr:
-# 	for t in range(tries):
-# 		(Mu, P, Var) = p3.init(X, K)
-# 		(Mu, P, Var, post) = p3.kMeans(X, K, Mu, P, Var)
-# 		title = 'Plot for K = ' + str(K) + ', Try ' + str(t)
-# 		p3.plot2D(X, K, Mu, P, Var, post, title)
+print "----------------------SECTION 1.A----------------------"
+K_arr = [1, 2, 3, 4]
+tries = 4
+print X
+for K in K_arr:
+	for t in range(tries):
+		(Mu, P, Var) = p3.init(X, K)
+		(Mu, P, Var, post) = p3.kMeans(X, K, Mu, P, Var)
+		title = 'Plot for K = ' + str(K) + ', Try ' + str(t)
+		p3.plot2D(X, K, Mu, P, Var, post, title)
 
 #-------------------------------------------------------------------------------
 
@@ -116,12 +116,12 @@ X = p3.readData("toy_data.txt")
 # the log-likelihood increases monotonically. Also run the model with K = 1,
 # and verify that the log-likelihood is -1521060.95399.
 
-X = p3.readData("netflix_incomplete.txt")
-K = 12
-(Mu, P, Var) = p3.init(X, K)
-# print Mu, P, Var
-(Mu, P, Var, post, LL) = p3.mixGauss_part2(X, K, Mu, P, Var)
-print "LL: ", LL[-1]
+# X = p3.readData("netflix_incomplete.txt")
+# K = 12
+# (Mu, P, Var) = p3.init(X, K)
+# # print Mu, P, Var
+# (Mu, P, Var, post, LL) = p3.mixGauss_part2(X, K, Mu, P, Var)
+# print "LL: ", LL[-1]
 # title = 'Plot for K = ' + str(K) + ' Using EM2 || Final LL = ' + str(LL[-1])
 # p3.plot2D(X, K, Mu, P, Var, post, title)
 
@@ -137,9 +137,9 @@ print "LL: ", LL[-1]
 # 'netflix_complete.txt' and report the root mean squared error between the two
 # matrices using rmse.
 
-X_filled = p3.fillMatrix(X,K,Mu,P,Var)
-X_correct = p3.readData("netflix_complete.txt")
-rmse = p3.rmse(X_filled, X_correct)
-print rmse
+# X_filled = p3.fillMatrix(X,K,Mu,P,Var)
+# X_correct = p3.readData("netflix_complete.txt")
+# rmse = p3.rmse(X_filled, X_correct)
+# print rmse
 
 #-------------------------------------------------------------------------------
